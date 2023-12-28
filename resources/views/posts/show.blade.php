@@ -1,4 +1,4 @@
-<x-microblog.layout>
+<x-micro-blog-layout>
     <div class="my-14 flex flex-col">
         <div class="text-center">
             <p class="text-gray-500">18/08/2023</p>
@@ -65,4 +65,4 @@
         </div>
     
     </div>
-</x-microblog.layout>
+</x-micro-blog-layout>

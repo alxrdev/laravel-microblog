@@ -51,7 +51,7 @@
 
                 <div class="text-lg hidden md:flex space-x-6">
                     <p class="tracking-widest">Logged as: <a class="hover:text-stone-500" href="{{ route('dashboard') }}">John Smith</a></p>
-                    <form action="POST" action={{ route('logout') }}>
+                    <form action="POST" action="{{ route('logout') }}">
                         <button type="submit" class="tracking-widest hover:text-stone-500">
                             Logout
                         </button>
@@ -72,7 +72,7 @@
                 <div id="mobile-menu" class="flex-col items-center hidden py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg">
                     <p class="tracking-widest">Logged as: <a class="hover:text-stone-500" href="{{ route('dashboard') }}">John Smith</a></p>
                     
-                    <form action="POST" action={{ route('logout') }}>
+                    <form action="POST" action="{{ route('logout') }}">
                         <button type="submit" class="tracking-widest hover:text-stone-500">
                             Logout
                         </button>

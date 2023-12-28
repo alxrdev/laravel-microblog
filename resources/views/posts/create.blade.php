@@ -1,4 +1,4 @@
-<x-microblog.layout>
+<x-micro-blog-layout>
     <div class="my-14">
         <h1 class="text-4xl">New blog post</h1>
         <div class="w-full">
@@ -29,5 +29,5 @@
             </form>
         </div>
     </div>
-</x-microblog.layout>
+</x-micro-blog-layout>
   
