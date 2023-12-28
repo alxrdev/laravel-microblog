@@ -24,7 +24,7 @@ Route::resource('posts', PostController::class)
 Route::resource('posts', PostController::class)
     ->only(['index', 'show']);
 
-Route::get('/posts/user/{id}', [PostController::class, 'user'])->name('posts.user');
+Route::get('/posts/user/{id}/{locale?}', [PostController::class, 'user'])->name('posts.user');
 
 Route::get('/toggleFollow/{id}', [PostController::class, 'toggleFollow'])
     ->middleware(['auth', 'verified'])

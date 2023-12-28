@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
 {
@@ -66,8 +67,9 @@ class PostController extends Controller
     /**
      * Display a list of the resources from a specific user
      */
-    public function user(string $id)
+    public function user(string $id, string $locale = 'en')
     {
+        App::setLocale($locale);
         return view('posts.index');
     }
 

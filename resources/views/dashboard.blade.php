@@ -21,43 +21,51 @@
                                 class="hover:text-indigo-600 py-2 cursor-pointer"
                                 @click="tab = 1"
                             >
-                                Followers</div>
+                                {{ __('Followers') }}</div>
 
                             <div
                                 :class="{ 'text-indigo-600 border-b border-indigo-600': tab == 2 }"
                                 class="hover:text-indigo-600 py-2 pl-2 cursor-pointer"
                                 @click="tab = 2"
                             >
-                                Following</div>
+                                {{ __('Following') }}
+                            </div>
 
                             <div 
                                 :class="{ 'text-indigo-600 border-b border-indigo-600': tab == 3 }"
                                 class="hover:text-indigo-600 py-2 pl-2 cursor-pointer"
                                 @click="tab = 3"
                             >
-                                Liked Posts</div>
+                                {{ __('Liked Posts') }}
+                            </div>
                         </div>
                         <div x-show="tab == 1">
-                            <b>People that follow you:</b>
+                            <b>{{ __('People that follow you') }}:</b>
                             <ul>
-                                <li><a class="hover:text-stone-500" href="{{ route('posts.index') }}">John Smith</a>
+                                <li>
+                                    <a class="hover:text-stone-500" href="{{ route('posts.index') }}">John Smith</a>
                                 </li>
                             </ul>
                         </div>
                         <div x-show="tab == 2">
-                            <b>People that you follow:</b>
+                            <b>{{ __('People that you follow') }}:</b>
                             <ul class="space-y-4">
-                                <li><a class="hover:text-stone-500" href="{{ route('posts.user', 1) }}">Jane Doe</a><a
-                                        href="{{ route('toggleFollow', 1) }}"
+                                <li>
+                                    <a class="hover:text-stone-500" href="{{ route('posts.user', 1) }}">Jane Doe</a>
+                                    <a href="{{ route('toggleFollow', 1) }}"
                                         class="ml-3 inline font-bold text-sm px-4 py-1 text-white rounded bg-blue-500 hover:bg-blue-600">
-                                        Unfollow</a></li>
+                                        {{ __('Unfollow') }}
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div x-show="tab == 3">
-                            <b>Posts you liked:</b>
+                            <b>{{ __('Posts you liked') }}:</b>
                             <ul>
-                                <li><a class="hover:text-stone-500" href="{{ route('posts.show', 1) }}">Liked post
-                                        title</a>
+                                <li>
+                                    <a class="hover:text-stone-500" href="{{ route('posts.show', 1) }}">
+                                        Liked post title
+                                    </a>
                                 </li>
                             </ul>
                         </div>

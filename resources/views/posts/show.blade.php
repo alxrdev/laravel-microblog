@@ -38,13 +38,15 @@
                 (3)
             </div>
 
-            You follow:&nbsp;<a class="text-green-500 hover:text-green-700" href="{{ route('posts.user', 1) }}">
+            {{ __('You follow') }}:&nbsp;<a class="text-green-500 hover:text-green-700" href="{{ route('posts.user', 1) }}">
                 John Smith</a>
 
-            <a href="{{ route('toggleFollow', 1) }}"
-                class="ml-3 inline font-bold text-sm px-6 py-2 text-white rounded bg-blue-500 hover:bg-blue-600">
-                Follow the post author</a>
-
+            <a
+                href="{{ route('toggleFollow', 1) }}"
+                class="ml-3 inline font-bold text-sm px-6 py-2 text-white rounded bg-blue-500 hover:bg-blue-600"
+            >
+                {{ __('Follow the post author') }}
+            </a>
         </div>
     
     </div>
