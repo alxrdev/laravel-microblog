@@ -21,6 +21,14 @@
             <span class="text-red-600 text-sm">Error message</span>
         </label>
 
-        <p class="text-sm text-gray-600">Saved</p>
+        <p
+            x-data="{ show: true }"
+            x-show="show"
+            x-transition
+            x-init="setTimeout(() => show = false, 2000)"
+            class="text-sm text-gray-600"
+        >
+            Saved
+        </p>
     </form>
 </section>
