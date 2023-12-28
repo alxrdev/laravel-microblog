@@ -4,8 +4,10 @@
     <div class="my-14">
         <h1 class="text-4xl">Edit blog post</h1>
         <div class="w-full">
-            <form method="POST" action="{{ route('posts.update', 1) }}"
-                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form method="POST" action="{{ route('posts.update', 1) }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                @csrf
+                @method('put')
+                
                 <div class="mb-6">
                     <label class="block text-gray-700 font-bold mb-2" for="post-title">
                         Post title

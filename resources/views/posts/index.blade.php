@@ -18,6 +18,9 @@
                 </a>
 
                 <form method="POST" action="{{ route('posts.destroy', 1) }}">
+                    @csrf
+                    @method('delete')
+                    
                     <button type="submit" href="{{ route('posts.destroy', 1) }}"
                         onclick="return confirm('Are you sure?')" title="delete" class="cursor-pointer">
                         <x-microblog.images.delete-icon />
