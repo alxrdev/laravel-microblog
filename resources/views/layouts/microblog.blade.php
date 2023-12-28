@@ -9,9 +9,21 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
-        <div class="flex justify-between m-auto w-3/4 text-blue-200 shadow-inner p-3 bg-blue-600">
-            <p><strong>Info</strong> New blog posts has been written</p>
-            <strong class="text-xl align-center cursor-pointer">&times;</strong>
+        <div
+            x-data="{ show: true, message: 'New blog posts has been written' }"
+            x-show="show"
+            x-init="setTimeout(() => show = false, 5000)"
+            @close.window="show=false"
+            x-transition
+            class="flex justify-between m-auto w-3/4 text-blue-200 shadow-inner p-3 bg-blue-600"
+        >
+            <p><strong>Info</strong> <span x-html="message"></span></p>
+            <strong
+                @click="$dispatch('close')"
+                class="text-xl align-center cursor-pointer"
+            >
+                &times;
+            </strong>
         </div>
 
         <div class="container mx-auto p-10">
