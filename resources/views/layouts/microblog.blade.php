@@ -63,11 +63,7 @@
 
                 <div class="text-lg hidden md:flex space-x-6">
                     <p class="tracking-widest">Logged as: <a class="hover:text-stone-500" href="{{ route('dashboard') }}">John Smith</a></p>
-                    <form action="POST" action="{{ route('logout') }}">
-                        <button type="submit" class="tracking-widest hover:text-stone-500">
-                            Logout
-                        </button>
-                    </form>
+                    <x-microblog.logout-form />
                     <a class="inline font-bold text-sm px-6 py-2 text-white rounded-full bg-red-500 hover:bg-red-600" href="{{ route('posts.create') }}">New blog post</a>
                     <a class="tracking-widest hover:text-stone-500" href="{{ route('login') }}">Login</a>
                     <a class="tracking-widest hover:text-stone-500" href="{{ route('register') }}">Register</a>
@@ -83,13 +79,7 @@
             <div class="md:hidden">
                 <div id="mobile-menu" class="flex-col items-center hidden py-8 mt-10 space-y-6 bg-white left-6 right-6 drop-shadow-lg">
                     <p class="tracking-widest">Logged as: <a class="hover:text-stone-500" href="{{ route('dashboard') }}">John Smith</a></p>
-                    
-                    <form action="POST" action="{{ route('logout') }}">
-                        <button type="submit" class="tracking-widest hover:text-stone-500">
-                            Logout
-                        </button>
-                    </form>
-
+                    <x-microblog.logout-form />
                     <a href="{{ route('posts.create') }}" class="inline font-bold text-sm px-6 py-2 text-white rounded-full bg-red-500 hover:bg-red-600">
                         New blog post
                     </a>
