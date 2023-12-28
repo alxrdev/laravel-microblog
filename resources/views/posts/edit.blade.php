@@ -1,4 +1,6 @@
 <x-micro-blog-layout>
+    <x-slot:title>Edit post</x-slot:title>
+
     <div class="my-14">
         <h1 class="text-4xl">Edit blog post</h1>
         <div class="w-full">
