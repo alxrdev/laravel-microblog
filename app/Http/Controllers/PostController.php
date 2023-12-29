@@ -28,7 +28,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return 'save post in the database';
+        $validate = $request->validate([
+            'title' => 'required|string|max:20',
+            'content' => 'required|string|max:1000'
+        ]);
+
+        return $validate;
     }
 
     /**
@@ -52,8 +57,12 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // return redirect(route('posts.index'));
-        return 'save updated post in the database';
+        $validate = $request->validate([
+            'title' => 'required|string|max:20',
+            'content' => 'required|string|max:1000'
+        ]);
+
+        return redirect(route('posts.index'));
     }
 
     /**
