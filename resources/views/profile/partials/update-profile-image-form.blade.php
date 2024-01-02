@@ -9,7 +9,7 @@
         </p>
     </header>
 
-    <img src="http://localhost/images/test-image.png" alt="profile image">
+    <img src="{{ asset('storage/' . $user->image?->path) }}" alt="profile image">
 
     <form method="POST" action="{{ route('profile.image') }}" enctype="multipart/form-data" class="p-4">
         @csrf
