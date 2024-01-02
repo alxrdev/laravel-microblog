@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -32,6 +33,8 @@ class PostController extends Controller
             'title' => 'required|string|max:20',
             'content' => 'required|string|max:1000'
         ]);
+
+        Post::create($validate);
 
         return $validate;
     }
