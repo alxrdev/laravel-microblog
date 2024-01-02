@@ -4,7 +4,7 @@
     <div class="my-14">
         <h1 class="text-4xl">Edit blog post</h1>
         <div class="w-full mt-4">
-            <form method="POST" action="{{ route('posts.update', 1) }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <form method="POST" action="{{ route('posts.update', $post->id) }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 @csrf
                 @method('patch')
                 
@@ -18,7 +18,7 @@
                         id="post-title"
                         class="shadow appearance-none border {{ $errors->first('title') ? 'border-red-500' : null }} rounded w-full py-2 px-3 text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline"
                         placeholder="write post title here"
-                        vale="{{ old('title', 'Post title') }}"
+                        value="{{ old('title', $post->title) }}"
                         required
                     >
                     <p class="text-red-500 text-xs italic">{{ $errors->first('title') }}</p>
@@ -34,7 +34,7 @@
                         class="drop-shadow-lg w-full h-60 p-4 border {{ $errors->first('content') ? 'border-red-500' : null }} focus:outline-none focus:shadow-outline"
                         placeholder="write post content here"
                         required
-                    >{{ old('content', 'Post content') }}</textarea>
+                    >{{ old('content', $post->content) }}</textarea>
                     <p class="text-red-500 text-xs italic">{{ $errors->first('content') }}</p>
                 </div>
 
