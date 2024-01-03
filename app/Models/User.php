@@ -66,10 +66,20 @@ class User extends Authenticatable
         return $this->belongsToMany(User::class, 'followers', 'follower_id', 'following_id');
     }
 
-    public function isFollowing($user)
+    public function isFollowing($user): bool
     {
         return $this->following()
             ->where('following_id', $user->getKey())
             ->exists();
+    }
+
+    public function likedPosts()
+    {
+        return $this->morphedByMany(Post::class, 'likeable');
+    }
+
+    public function dislikedPosts()
+    {
+        return $this->morphedByMany(Post::class, 'dislikeable');
     }
 }
