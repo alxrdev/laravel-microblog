@@ -7,27 +7,29 @@ use Livewire\Component;
 class Like extends Component
 {
     public $post;
-    public $likes = 0;
-    public $dislikes = 0;
 
     public function like(): void
     {
-        $this->likes++;
+        $this->post->usersThatLike()->attach(auth()->user()->id);
+        $this->post->save();
     }
 
     public function undoLike(): void
     {
-        $this->likes--;
+        $this->post->usersThatLIke()->detach(auth()->user()->id);
+        $this->post->save();
     }
 
     public function dislike(): void
     {
-        $this->dislikes++;
+        $this->post->usersThatDislike()->attach(auth()->user()->id);
+        $this->post->save();
     }
 
     public function undoDislike(): void
     {
-        $this->dislikes--;
+        $this->post->usersThatDislike()->detach(auth()->user()->id);
+        $this->post->save();
     }
 
     public function render()
