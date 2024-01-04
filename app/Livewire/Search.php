@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\Post;
 
 class Search extends Component
 {
@@ -11,7 +12,7 @@ class Search extends Component
     public function render()
     {
         return view('livewire.search', [
-            'posts' => $this->search ? [['title' => $this->search]] : []
+            'posts' => $this->search ? Post::whereFullText('title', $this->search)->orWhereFullText('content', $this->search)->get() : []
         ]);
     }
 }
