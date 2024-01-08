@@ -11,7 +11,7 @@
         @livewireStyles
     </head>
     <body class="antialiased">
-        <div
+        {{-- <div
             x-data="{ show: true, message: 'New blog posts has been written' }"
             x-show="show"
             x-init="setTimeout(() => show = false, 5000)"
@@ -26,7 +26,7 @@
             >
                 &times;
             </strong>
-        </div>
+        </div> --}}
 
         <div class="container mx-auto p-10">
             <header class="flex justify-between items-center">
