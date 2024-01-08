@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 use App\Models\Post;
 use App\Models\User;
-use App\Notifications\NewPost;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PostController extends Controller
 {
@@ -41,11 +40,7 @@ class PostController extends Controller
             'content' => 'required|string|max:1000'
         ]);
 
-        $post = $request->user()->posts()->create($validate);
-
-        foreach (User::whereNot('id', auth()->user()->id)->cursor() as $user) {
-            $user->notify(new NewPost($post));
-        }
+        $request->user()->posts()->create($validate);
 
         return redirect(route('posts.index'));
     }
